@@ -1,0 +1,17 @@
+### Health check
+GET http://localhost:8080/health
+
+### Example: create (replace with the real resource during the interview)
+# POST http://localhost:8080/games
+# Content-Type: application/json
+#
+# {"players":[{"name":"Alice"},{"name":"Bob"}]}
+
+### Example: capture an id from a response into a variable (IntelliJ HTTP client)
+# > {% client.global.set("gameId", response.body.id); %}
+
+### Example: use a captured variable
+# POST http://localhost:8080/games/{{gameId}}/moves
+# Content-Type: application/json
+#
+# {"playerId":"{{aliceId}}","column":3}
